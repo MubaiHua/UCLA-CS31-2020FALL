@@ -1,0 +1,34 @@
+// Code for Project 1
+	// Report poll results
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int numberSurveyed;
+	int forJoe;
+	int forDonald;
+
+	cout << "How many registered voters were surveyed? ";
+	cin >> numberSurveyed;
+	cout << "How many of them say they will vote for Joe? ";
+	cin >> forJoe;
+	cout << "How many of them say they will vote for Donald? ";
+	cin >> forDonald;
+
+	double pctJoe = 100.0 * forJoe / numberSurveyed;
+	double pctDonald = 100.0 * forDonald * numberSurveyed; //I modified the formula for calculation
+
+	cout.setf(ios::fixed);
+	cout.precision(1);
+
+	cout << endl;
+	cout << pctDonald << "% say they will vote for Joe." << endl; 
+	cout << pctJoe << "% say they will vote for Donald." << endl; //I switched the variable "pctDonald" and "pctJoe" in the output
+
+	if (forJoe > forDonald)
+		cout << "Joe is predicted to win the election." << endl;
+	else
+		cout << "Donald is predicted to win the election." << endl;
+}
